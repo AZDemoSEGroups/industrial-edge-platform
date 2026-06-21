@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 # The Intuitive Guide to LoRa: From Radio Waves to the Birth of Chirp Spread Spectrum
 When studying wireless communication, technologies like Wi-Fi, Bluetooth, and LTE get a lot of attention. But when it comes to the Internet of Things (IoT), such as tracking a soil sensor in the middle of a massive farm or a water meter deep inside a concrete basement, we need a technology that can travel miles while running on a battery the size of a coin.
 That technology is LoRa (Long Range).
 To truly understand how LoRa works, a degree in advanced mathematics is not required. Following the physics of a radio wave and looking at the historical challenges engineers faced it can be observed how a radical design shift transformed an engineering challenge into a wireless superpower.
 ## The Baseline: Separating Speed from Strength
+=======
+The Intuitive Guide to LoRa: From Radio Waves to the Birth of Chirp Spread Spectrum
+While studying wireless communication, technologies like Wi-Fi, Bluetooth and LTE get the most attention. When it comes to the Internet of Things (IoT) such as tracking a soil sensor in the middle of a massive farm or a water meter deep inside a concrete basement, we need a technology that can travel miles while running on a battery the size of a coin.
+That technology is LoRa (Long Range).
+To truly understand how LoRa works, following the physics of a radio wave and looking at the historical challenges engineers faced it can be observed how a radical design shift transformed an engineering challenge into a wireless superpower.
+1. The Baseline: Separating Speed from Strength
+>>>>>>> 75cc1e5 (Removed degree required mention in index.md)
 To understand how data travels through the air, let's visualize a radio-wave on a graph. A radio wave oscillates up and down across a zero-voltage line. Two properties define its behavior and it is important not to confuse them.
 Wave Height (Amplitude) is how far above and below the zero line the wave reaches. This is directly related to signal power and battery usage.
 Wave Speed (Frequency) is how many times the wave completes a full up-and-down cycle every second.
