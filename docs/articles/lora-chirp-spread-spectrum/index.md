@@ -9,7 +9,7 @@ Wave Speed (Frequency) is how many times the wave completes a full up-and-down c
 For example, FM radio broadcasting at 103.3 MHz  means that the transmitter is oscillating 103.3 million times per second hovering slightly above and below the absolute 103.3 MHz. To send music or speech, the station subtly increases and decreases that frequency around its 103.3 MHz home base.
 An analog car radio uses a component called a discriminator that is essentially a frequency speedometer to track those tiny frequency changes and convert them back into electrical signals that drive the speakers.
 
-
+![Figure 1](figure-1-fm-modulation.png)
 
 The important idea is simple. Information does not have to be carried by power. Information can be carried by changes in frequency.
 2. Going Digital: Fixed Frequencies and Symbol Timing
@@ -27,11 +27,15 @@ Every radio relies on physical oscillators and clocks. Those clocks are built fr
 The Anatomy of a Timing Error
 Think of this as communicating with a colleague on Teams or Slack, their computer clock is running faster. At some point sending a message to the colleague at 1:58pm will appear at 2:01pm on their local computer. Now imagine a receiver whose internal clock is running slightly faster than the transmitter. At first the difference is tiny. The receiver samples a little earlier than intended then a little earlier again and the pattern continues. Eventually the accumulated error causes the receiver to sample too close to a symbol boundary. Instead of observing a stable symbol state, it begins sampling during the transition itself. 
 
+![Figure 2](figure-2-fsk-drift.png)
+
 The key observation is not that FSK is flawed but that traditional radios spend a surprising amount of effort determining exactly what frequency exists at a particular moment in time. As engineers pushed toward longer ranges, lower power budgets and weaker signals they began looking for a different approach.
 4. The LoRa Breakthrough: Chirp Spread Spectrum
 Traditional digital radios such as FSK represent information using discrete frequency states. The receiver's task is to determine which frequency is present during a particular symbol interval and then reconstruct the original bit stream.
 As communication distances increase and signal levels approach the noise floor, this approach becomes increasingly challenging. The receiver must simultaneously maintain symbol timing, distinguish between closely spaced frequencies, and compensate for clock and oscillator imperfections.
 LoRa takes a fundamentally different approach. Instead of transmitting a fixed frequency during a symbol period, the transmitter continuously sweeps across a defined frequency range for each symbol it wants to send. This sweeping waveform is known as a Chirp and it forms the basis of LoRa's physical layer, the Chirp Spread Spectrum (CSS).
+
+![Figure 3](figure-3-lora-symbol-offsets.png)
 
 Every LoRa symbol uses the same chirp slope, bandwidth (frequency range) and symbol duration. The transmitter encodes information by shifting the chirp's starting position within the available frequency window. The frequency range (bandwidth) can be viewed as a cyclic space bounded by a floor frequency and a ceiling frequency.
 When the chirp reaches the ceiling before the symbol duration expires, it immediately wraps back (drop to floor) to the floor frequency and continues its sweep. The wrap is not a new symbol and it is not a pause. It is simply the continuation of the same chirp within a cyclic frequency range. As a result, every symbol occupies the same amount of time and traverses the same total frequency span. The only parameter that changes is the starting offset.
@@ -52,6 +56,8 @@ Small timing errors, oscillator offsets and localized interference affect only p
 
 6. Spreading Factor: Trading Throughput for Sensitivity
 The number of available chirp offsets is determined by the Spreading Factor (SF). The spreading factor defines how many distinct symbol values can be represented within a chirp.
+
+![Figure 4](figure-4-spreading-factor.png)
 
 A lower spreading factor produces shorter symbols and higher throughput. For example:
 SF7 provides 128 possible symbol values
