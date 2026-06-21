@@ -77,7 +77,7 @@ The result is a communication system capable of achieving long range, low power 
 These characteristics make LoRa particularly well suited for utility metering, environmental monitoring, industrial telemetry, agriculture, smart cities and many other IoT applications where battery life and communication range are often more important than raw throughput.
 
 About the Author
-Kaleem Kan specializes in cloud-native systems, industrial IoT, edge computing and OT/IT integration architectures. His work focuses on bridging field devices, industrial protocols and modern event-driven cloud platforms.
+Kaleem Khan specializes in cloud-native systems, industrial IoT, edge computing and OT/IT integration architectures. His work focuses on bridging field devices, industrial protocols and modern event-driven cloud platforms.
 
 
 
